@@ -1,5 +1,8 @@
 import React from 'react';
 import ChatListComponent from '../chatList/chatList';
+import ChatViewComponent from '../chatView/chatView';
+import {Button, withStyles} from '@material-ui/core';
+import styles from './styles'
 
 const firebase = require("firebase");
 
@@ -16,6 +19,8 @@ class DashboardComponent extends React.Component{
     }
 
     render(){
+
+        const {classes} = this.props;
         return(
             <div>
                 <ChatListComponent
@@ -26,20 +31,34 @@ class DashboardComponent extends React.Component{
                 userEmail={this.state.email}
                 selectedChatIndex={this.state.selectedChat}>
                 </ChatListComponent>
+                <Button className={classes.signOutBtn} onClick={this.signOut}> Sign Out</Button>
+                {
+                    this.state.newChatFormVisible ?
+                    null:
+                    <ChatViewComponent
+                        user={this.state.email}
+                        chat={this.state.chats[this.state.selectedChat]}
+                        ></ChatViewComponent>
+                }
             </div>
         );
     }
 
-    selectChat = (chatIndex) => {
-        console.log('selected a chat', chatIndex);
-    }
+    //sign out function for button
+    signOut = () => firebase.auth().signOut();
 
+    //props for chatlist
+    selectChat = (chatIndex) => {
+        this.setState({selectedChat: chatIndex});
+    }
+    //props fo chatlist
     newChatBtnClicked = () => this.setState({newChatFormVisible: true, selectedChat: null})
 
+    // firebase
     componentDidMount = () => {
         firebase.auth().onAuthStateChanged(async _usr => {
             if(! _usr)
-                this.props.history.push('./login')
+                this.props.history.push('./login');
             else{
                 await firebase
                     .firestore()
@@ -58,4 +77,4 @@ class DashboardComponent extends React.Component{
     }
 }
 
-export default DashboardComponent;
+export default withStyles(styles)(DashboardComponent);
