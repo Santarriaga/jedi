@@ -29,7 +29,7 @@ class SignupComponent extends React.Component{
         const{classes} = this.props;
 
         return(
-            <main className={classes.main}>
+            <main className={classes.main} >
                 <CssBaseline></CssBaseline>
                 <Paper className={classes.paper}>
                     <Typography component='h1' variant='h5'>

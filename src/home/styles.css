@@ -1,0 +1,67 @@
+.Home{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: bottom;
+    background-color: #1E1F26;
+}
+
+.logo{
+
+    height: 350px;
+    width: 350px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signup{
+    color: #303f9f;
+    background-color: #303f9f;
+    color: white;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signup:hover{
+    background-color: #555;
+}
+.signup:active {
+  background-color: black;
+}
+
+.login{
+    color: #303f9f;
+    background-color: #303f9f;
+    color: white;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login:hover{
+    background-color: #555;
+}
+.login:active {
+  background-color: black;
+}
+
+
+
+h1{
+    text-align: center;
+    color: white;
+}
