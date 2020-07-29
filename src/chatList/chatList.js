@@ -92,7 +92,7 @@ class ChatListComponent extends React.Component{
     }
 
     newChat = () => {
-        console.log('new chat clicked');
+        this.props.newchatBtnFn();
     }
 
     userIsSender = (chat) => chat.messages[chat.messages.length - 1].sender === this.props.userEmail;

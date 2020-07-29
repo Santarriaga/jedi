@@ -2,6 +2,7 @@ import React from 'react';
 import ChatListComponent from '../chatList/chatList';
 import ChatViewComponent from '../chatView/chatView';
 import ChatTextBoxComponent from '../chatTextBox/chatTextBox';
+import NewChatComponent from '../newChat/newChat'
 import {Button, withStyles} from '@material-ui/core';
 import styles from './styles'
 
@@ -44,6 +45,10 @@ class DashboardComponent extends React.Component{
                     <ChatTextBoxComponent messageReadFn={this.messageRead}submitMessageFn={this.submitMessage} ></ChatTextBoxComponent> :
                     null
                 }
+                {
+                    this.state.newChatFormVisible ? <NewChatComponent goToChatFn={this.goToChat} newChatSubmitFn={this.newChatSubmit} ></NewChatComponent> :null
+                }
+
                 <Button className={classes.signOutBtn} onClick={this.signOut}> Sign Out</Button>
 
             </div>
@@ -55,7 +60,7 @@ class DashboardComponent extends React.Component{
 
     //props for chatlist
     selectChat = async (chatIndex) => {
-        await this.setState({selectedChat: chatIndex});
+        await this.setState({selectedChat: chatIndex, newChatFormVisible: false});
         this.messageRead();
     }
     //props fo chatlist
@@ -120,6 +125,35 @@ class DashboardComponent extends React.Component{
             }
         })
     }
+
+    goToChat = async (docKey,msg) => {
+        const usersInChat = docKey.split(':');
+        const chat = this.state.chats.find(_chat => usersInChat.every(_user => _chat.users.includes(_user)));
+        this.setState({newChatFormVisible: false});
+        await this.selectChat(this.state.chats.indexOf(chat));
+        this.submitMessage(msg);
+    }
+
+    newChatSubmit = async (chatObj) => {
+        const docKey = this.buildDocKey(chatObj.sendTo);
+        await firebase
+            .firestore()
+            .collection('chats')
+            .doc(docKey)
+            .set({
+                messages: [{
+                    message: chatObj.message,
+                    sender: this.state.email
+                }],
+                receiverHasRead:false,
+                users: [this.state.email, chatObj.sendTo]
+            })
+
+        this.setState({newChatFormVisible: false});
+        this.selectChat(this.state.chats.length - 1);
+    }
+
+
 }
 
 export default withStyles(styles)(DashboardComponent);
