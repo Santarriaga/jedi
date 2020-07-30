@@ -24,7 +24,7 @@ class DashboardComponent extends React.Component{
 
         const {classes} = this.props;
         return(
-            <div>
+            <div className={classes.fillWindow}>
                 <ChatListComponent
                 history={this.props.history}
                 newchatBtnFn={this.newChatBtnClicked}

@@ -27,10 +27,11 @@ class LoginComponent extends React.Component{
 
     const {classes} = this.props;
     return(
+        <div className={classes.fillWindow} >
         <main className={classes.main}>
             <CssBaseline></CssBaseline>
             <Paper className={classes.paper}>
-                <Typography component='h1' variant='h5'>
+                <Typography component='h1' variant='h5' color='textPrimary'>
                     Log In
                 </Typography>
                 <form className={classes.form} onSubmit={ (e) => this.submitLogin(e)}>
@@ -56,6 +57,7 @@ class LoginComponent extends React.Component{
                 <Link className={classes.signUpLink} to='./signup'>Sign Up</Link>
             </Paper>
         </main>
+        </div>
     );
     }
 

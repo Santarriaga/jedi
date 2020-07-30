@@ -44,7 +44,7 @@ class ChatListComponent extends React.Component{
                                                 <ListItemText primary={_chat.users.filter(_user => _user !== this.props.userEmail)[0]}
                                                     secondary={
                                                         <React.Fragment>
-                                                            <Typography component='span'color='textPrimary'>
+                                                            <Typography component='span'color='primary'>
                                                                 {
                                                                     _chat.messages[_chat.messages.length - 1].message.substring(0, 30)
                                                                 }

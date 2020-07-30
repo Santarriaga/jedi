@@ -1,5 +1,15 @@
 const styles = theme => ({
-    
+
+    fillWindow: {
+        height: '100%',
+        position: 'absolute',
+        left: '0',
+        width: '100%',
+        overFlow: 'hidden',
+        backgroundColor: '#2E4756'
+    },
+
+
   signOutBtn: {
     position: 'absolute',
     bottom: '0px',

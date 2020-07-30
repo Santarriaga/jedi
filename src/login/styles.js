@@ -1,4 +1,14 @@
 const styles = theme => ({
+
+  fillWindow: {
+      height: '100%',
+      position: 'absolute',
+      left: '0',
+      width: '100%',
+      overFlow: 'hidden',
+      backgroundColor: '#223742'
+  },
+
   main: {
       width: 'auto',
       display: 'block',

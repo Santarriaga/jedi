@@ -1,6 +1,17 @@
 const styles = theme => ({
+
+  fillWindow: {
+      height: '100%',
+      position: 'absolute',
+      left: '0',
+      width: '100%',
+      overFlow: 'hidden',
+      backgroundColor: '#223742'
+  },
+
   main: {
-    width: 'auto',
+    width: '100%',
+    height: '100%',
     display: 'block',
     marginLeft: theme.spacing() * 3,
     marginRight: theme.spacing() * 3,

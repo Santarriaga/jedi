@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: top;
     align-items: bottom;
-    background-color: #add1e6;
+    background-color: #223742;
 }
 
 .logo{
@@ -18,7 +18,6 @@
 }
 
 .signup{
-    color: #303f9f;
     background-color: #303f9f;
     color: white;
     padding: 1em 1.5em;
@@ -32,15 +31,14 @@
 }
 
 .signup:hover{
-    background-color: #555;
+    background-color: #3C7A89;
 }
 .signup:active {
-  background-color: black;
+  background-color: #16262E;
 }
 
 .login{
-    color: #303f9f;
-    background-color: #303f9f;
+    background-color:  #303f9f;
     color: white;
     padding: 1em 1.5em;
     text-decoration: none;
@@ -53,10 +51,10 @@
 }
 
 .login:hover{
-    background-color: #555;
+    background-color: #3C7A89;
 }
 .login:active {
-  background-color: black;
+  background-color: #16262E;
 }
 
 
