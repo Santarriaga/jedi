@@ -47,7 +47,7 @@ class SignupComponent extends React.Component{
                         </FormControl>
 
                         <FormControl required fullWidth margin="normal">
-                            <InputLabel htmlFor='signup-password-confirmation-input'>Create A Password</InputLabel>
+                            <InputLabel htmlFor='signup-password-confirmation-input'>Enter Password Again</InputLabel>
                             <Input type='password' onChange={(e)=> this.userTyping('passwordConfirmation',e)} id='signup-password-confirmation-input'>Confirm Your Password</Input>
                         </FormControl>
                         <Button type='submit' fullWidth variant='contained' color='primary' className={classes.submit}>Submit </Button>

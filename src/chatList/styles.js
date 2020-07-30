@@ -1,6 +1,7 @@
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
+    color: 'black',
     height: 'calc(100% - 35px)',
     position: 'absolute',
     left: '0',
@@ -9,6 +10,7 @@ const styles = theme => ({
   },
   listItem: {
     cursor: 'pointer'
+
   },
   newChatBtn: {
     borderRadius: '0px'

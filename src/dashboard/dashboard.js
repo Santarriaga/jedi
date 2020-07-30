@@ -14,7 +14,7 @@ class DashboardComponent extends React.Component{
         super();
         this.state = {
             selectedChat: null,
-            newChatFormVisible: false,
+            newChatFormVisible: true,
             email:null,
             chats: []
         };
@@ -108,7 +108,7 @@ class DashboardComponent extends React.Component{
     componentDidMount = () => {
         firebase.auth().onAuthStateChanged(async _usr => {
             if(! _usr)
-                this.props.history.push('./login');
+                this.props.history.push('./');
             else{
                 await firebase
                     .firestore()

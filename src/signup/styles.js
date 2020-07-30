@@ -8,7 +8,7 @@ const styles = theme => ({
       width: 400,
       marginLeft: 'auto',
       marginRight: 'auto',
-    },
+    }
   },
   paper: {
     marginTop: theme.spacing() * 8,

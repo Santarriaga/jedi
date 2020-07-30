@@ -10,10 +10,11 @@ const styles = theme => ({
     top: '50px',
     width: 'calc(100% - 300px)',
     position: 'absolute'
+
   },
 
   userSent: {
-    float: 'left',
+    float: 'right',
     clear: 'both',
     padding: '20px',
     boxSizing: 'border-box',
@@ -26,7 +27,7 @@ const styles = theme => ({
   },
 
   friendSent: {
-    float: 'right',
+    float: 'left',
     clear: 'both',
     padding: '20px',
     boxSizing: 'border-box',
